@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兒童權利偵探找碴遊戲系統</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="kiosk-container">
+        <header class="header">
+            <div class="header-left"></div>
+            <div class="header-center">
+                <h1><i class="fa-solid fa-magnifying-glass"></i> 兒童權利偵探找碴遊戲系統</h1>
+                <p>點擊畫面中 5 個不對勁的地方，學習兒童權利！</p>
+            </div>
+            <div class="header-right">
+                <button class="knowledge-btn" id="knowledgeBtn">
+                    <i class="fa-solid fa-book-open-reader"></i> 權利寶典
+                </button>
+                <div class="score-board">已找到: <span id="score">0</span> / 5</div>
+            </div>
+        </header>
+        
+        <main class="game-area">
+            <div class="image-wrapper" id="imageWrapper">
+                <img src="image/background.png" alt="遊戲場景" class="game-image" id="gameImage">
+                <!-- Hotspots will be injected by JS -->
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Copyright &copy; Liyuchiutiger Gongminshen</p>
+        </footer>
+    </div>
+
+    <!-- 吉祥物 -->
+    <div class="mascot-container" id="mascot">
+        <img src="image/LiyuChillGuy.svg" alt="吉祥物" onerror="this.onerror=null; this.src='https://gongminshenliyuchiutiger.github.io/__public-useful__/image/LiyuChill.svg';">
+    </div>
+
+    <!-- 知識寶典 Modal -->
+    <div class="modal-overlay" id="knowledgeModalOverlay">
+        <div class="modal-content knowledge-modal">
+            <button class="close-btn" id="closeKnowledgeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <i class="fa-solid fa-book-open-reader fa-3x" style="color: var(--accent-color);"></i>
+                <h2 style="color: white;">兒童權利寶典</h2>
+            </div>
+            <p style="text-align: center; color: #cbd5e1; margin-bottom: 20px;">開始遊戲前，先來了解這 5 項重要的兒童權利吧！</p>
+            <div class="modal-body knowledge-list" id="knowledgeList">
+                <!-- 由 JavaScript 動態產生內容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 條文解說 Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <i id="modalIcon" class="fa-solid fa-circle-info fa-3x"></i>
+                <h2 id="modalTitle">標題</h2>
+            </div>
+            <div class="modal-body">
+                <h3 id="modalArticle" class="article-title">條文</h3>
+                <p id="modalDescription" class="article-desc">描述</p>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn" id="confirmBtn">我明白了！</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 過關 Modal -->
+    <div class="modal-overlay success-modal" id="successModal">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <i class="fa-solid fa-trophy fa-4x" style="color: gold;"></i>
+                <h2>恭喜過關！</h2>
+            </div>
+            <div class="modal-body">
+                <p>你已經找出所有不對勁的地方，成為厲害的權利偵探了！</p>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn" id="restartBtn"><i class="fa-solid fa-rotate-right"></i> 再玩一次</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
