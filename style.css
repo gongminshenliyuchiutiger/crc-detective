@@ -356,8 +356,11 @@ body {
 .modal-header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center; /* 預設置中 */
+    flex-direction: column;  /* 預設垂直排列以利置中 */
+    gap: 15px;
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .modal-header i {
@@ -367,6 +370,7 @@ body {
 .modal-header h2 {
     font-size: 2rem;
     color: white;
+    margin: 0;
 }
 
 .article-title {
@@ -374,20 +378,23 @@ body {
     font-size: 1.4rem;
     margin-bottom: 15px;
     background: rgba(99, 102, 241, 0.1);
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 12px;
-    border-left: 5px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color); /* 改為底線，置中才不會歪 */
+    display: inline-block; /* 讓背景寬度隨文字調整 */
+    text-align: center;
 }
 
 .article-desc {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #e2e8f0;
+    text-align: center; /* 描述也置中 */
 }
 
 .modal-footer {
     margin-top: 30px;
-    text-align: right;
+    text-align: center; /* Footer 按鈕置中 */
 }
 
 .action-btn {
@@ -411,10 +418,9 @@ body {
 .text-center {
     text-align: center;
 }
-.text-center .modal-header {
-    justify-content: center;
-    flex-direction: column;
-}
+
+/* 移除重複的 text-center header 定義，因為現在預設就是置中了 */
+
 
 
 
