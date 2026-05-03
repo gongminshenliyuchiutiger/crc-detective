@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === mascot || e.target.parentNode === mascot) {
             isDragging = true;
             mascot.style.transition = 'none'; // 拖曳時取消過渡動畫
+            mascot.classList.add('is-dragging');
         }
     }
 
@@ -159,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initialX = currentX;
         initialY = currentY;
         isDragging = false;
+        mascot.classList.remove('is-dragging');
         mascot.style.transition = 'filter 0.3s ease'; // 恢復濾鏡過渡
     }
 
